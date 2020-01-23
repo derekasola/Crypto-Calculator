@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    
+    >
+    
+    
+    <LinearLayout
+        android:id="@+id/TopLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    
+        <TextView
+            android:id="@+id/cryptoAndCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/CryptoTextView"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+    
+        <TextView
+            android:id="@+id/outPut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/TotalTextView"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_below="@id/TopLinearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="0dp"
+        android:text="UPDATE" />
+    
+    <LinearLayout
+        android:id="@+id/BottomLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button1"
+        android:orientation="horizontal">
+    
+    
+        <Spinner
+            android:id="@+id/dollarSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:foregroundTint="#007E7E7E" />
+    
+        <Spinner
+            android:id="@+id/cryptoSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/BottomLinearLayout"
+        android:orientation="horizontal">
+    
+        <EditText
+            android:id="@+id/dollarAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="0.00"
+            android:inputType="numberDecimal" />
+    
+        <EditText
+            android:id="@+id/cryptoAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="0.00000000"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+</RelativeLayout>
