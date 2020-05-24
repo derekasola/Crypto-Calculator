@@ -32,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
         
         final String[] cryptoTypeValue = new String[]{"BTC", "LTC", "ETH", "LINK" , "TRX" , "BCH", "DOGE"};
         final String[] currencyTypeValue = new String[]{"USD", "JPY" , "EUR", "AUD", "CAD", "CNY", "KRW"};
-        
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, cryptoTypeValue);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, currencyTypeValue);
+        final String API_KEY = getResources().getString(R.string.AV_API_KEY);
+    
+    
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, cryptoTypeValue);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, currencyTypeValue);
         cryptoType.setAdapter(adapter);
         currencyType.setAdapter(adapter1);
         //end spinner setup vvvvvvvvv
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 final String URL = ("https://www.alphavantage.co" +
                         "/query?function=CURRENCY_EXCHANGE_RATE" +
                         "&from_currency=" + cryptoType1 +
-                        "&to_currency=" + currencyType1 + "&apikey=4YYBRNYMR141GDIL");
+                        "&to_currency=" + currencyType1 + "&apikey=" + API_KEY);
                 String results = "";
                 
                 fetchData getData = new fetchData();
@@ -57,15 +59,13 @@ public class MainActivity extends AppCompatActivity {
                     results = getData.execute(URL).get();
                     
                     
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
+                } catch (ExecutionException | InterruptedException e) {
                     e.printStackTrace();
                 }
-                
-                
+    
+    
                 crypto.setText(results);
-                Double currencyTotal = 0.00;
+                double currencyTotal = 0.00;
                 
                 if((cryptoAmount.getText().toString().length() > 0
                         && dollarAmount.getText().toString().length() > 0)
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     currencyTotal = Double.parseDouble(dollarAmount.getText().toString()) / Double.parseDouble(results);
                 }
                 
-                total.setText(currencyTotal.toString());
+                total.setText(Double.toString(currencyTotal));
                 
                 
             }
