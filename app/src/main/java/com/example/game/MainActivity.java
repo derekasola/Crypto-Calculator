@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
     
-    
+    /*
                 crypto.setText(results);
                 double currencyTotal = 0.00;
                 
@@ -86,8 +86,10 @@ public class MainActivity extends AppCompatActivity {
                 
                 total.setText(Double.toString(currencyTotal));
                 
-                
+                */
             }
+            
+     
         });
     }
 }

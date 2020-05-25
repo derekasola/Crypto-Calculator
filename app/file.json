@@ -1,0 +1,37 @@
+{
+  "Meta Data": {
+    "1. Information": "Daily Prices and Volumes for Digital Currency",
+    "2. Digital Currency Code": "BTC",
+    "3. Digital Currency Name": "Bitcoin",
+    "4. Market Code": "CNY",
+    "5. Market Name": "Chinese Yuan",
+    "6. Last Refreshed": "2020-05-25 00:00:00",
+    "7. Time Zone": "UTC"
+  },
+  "Time Series (Digital Currency Daily)": {
+    "2020-05-25": {
+      "1a. open (CNY)": "62121.97838400",
+      "1b. open (USD)": "8718.14000000",
+      "2a. high (CNY)": "62868.45624000",
+      "2b. high (USD)": "8822.90000000",
+      "3a. low (CNY)": "61584.56563200",
+      "3b. low (USD)": "8642.72000000",
+      "4a. close (CNY)": "62733.35486400",
+      "4b. close (USD)": "8803.94000000",
+      "5. volume": "4920.04079600",
+      "6. market cap (USD)": "4920.04079600"
+    },
+    "2020-05-24": {
+      "1a. open (CNY)": "65405.95365600",
+      "1b. open (USD)": "9179.01000000",
+      "2a. high (CNY)": "66253.82880000",
+      "2b. high (USD)": "9298.00000000",
+      "3a. low (CNY)": "61992.72000000",
+      "3b. low (USD)": "8700.00000000",
+      "4a. close (CNY)": "62137.65470400",
+      "4b. close (USD)": "8720.34000000",
+      "5. volume": "70379.86645000",
+      "6. market cap (USD)": "70379.86645000"
+    }
+  }
+}

@@ -1,9 +1,14 @@
 package com.example.game;
 
 import android.os.AsyncTask;
+import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,33 +19,36 @@ public class fetchData extends AsyncTask<String, Void, String> {
     
     @Override
     protected String doInBackground(String... strings) {
-        String result = "";
-        URL url;
-        HttpURLConnection urlConection = null;
-        
-        try{
-            url = new URL(strings[0]);
-            urlConection = (HttpURLConnection) url.openConnection();
-            InputStream in = urlConection.getInputStream();
-            InputStreamReader reader = new InputStreamReader(in);
-            int data = reader.read();
-            
-            while(data != -1) {
-                char current = (char) data;
-                result += current;
-                data = reader.read();
-                
+    
+        try {
+            URL myURL = new URL(strings[0]);
+            HttpURLConnection urlConnection = (HttpURLConnection)myURL.openConnection();
+            InputStreamReader streamReader = new InputStreamReader(urlConnection.getInputStream());
+            BufferedReader reader = new BufferedReader(streamReader);
+            StringBuilder builder = new StringBuilder();
+            String line;
+            while((line = reader.readLine()) != null){
+                builder.append(line);
             }
-        }
-        catch(Exception e){
+            
+            Log.e("Json",builder.toString());
+            
+        } catch (IOException e) {
+            
             e.printStackTrace();
         }
-        
-        Pattern p = Pattern.compile("\"5. Exchange Rate\": \"(.*?)000000\",");
-        Matcher m =p.matcher(result);
-        while(m.find()){
-            result = m.group(1);
-        }
-        return result;
+    
+        return null;
     }
+    
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+    }
+    
+    @Override
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
+    }
+    
 }
