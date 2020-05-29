@@ -45,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String cryptoType1 = cryptoType.getSelectedItem().toString();
-                final String currencyType1 = currencyType.getSelectedItem().toString();
+                final String cryptoType1 = "BTC";
+                        //cryptoType.getSelectedItem().toString();
+                final String currencyType1 = "USD";
+                        //currencyType.getSelectedItem().toString();
                 final String URL = ("https://www.alphavantage.co" +
                         "/query?function=CURRENCY_EXCHANGE_RATE" +
                         "&from_currency=" + cryptoType1 +
