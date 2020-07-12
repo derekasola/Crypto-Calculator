@@ -3,6 +3,9 @@ package com.example.game;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,6 +19,8 @@ import java.util.regex.Pattern;
 
 //URL, Progress, Return
 public class fetchData extends AsyncTask<String, Void, String> {
+    
+    String result ="";
     
     @Override
     protected String doInBackground(String... strings) {
@@ -31,14 +36,18 @@ public class fetchData extends AsyncTask<String, Void, String> {
                 builder.append(line);
             }
             
-            Log.e("Json",builder.toString());
+            
+            
+            result = builder.toString();
+            
+            //Log.e("Json",builder.toString());
             
         } catch (IOException e) {
             
             e.printStackTrace();
         }
     
-        return null;
+        return result;
     }
     
     @Override
@@ -49,6 +58,11 @@ public class fetchData extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
+        try {
+            JSONArray jsonArray = new JSONArray(s);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
     
 }
