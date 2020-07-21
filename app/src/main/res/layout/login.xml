@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_in"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Please Sign-in" />
+    
+    
+    
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:padding="20dp"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:autofillHints="Password"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:labelFor="@id/sign_in" />
+    
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_margin="20dp"
+        android:hint="Password"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:labelFor="@id/sign_in" />
+    
+    <TextView
+        android:id="@+id/CreateNew-TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Create New Account"
+        android:textColor="#4050B6"/>
+</LinearLayout>
