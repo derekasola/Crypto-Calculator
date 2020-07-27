@@ -20,20 +20,13 @@ public class LogIn extends AppCompatActivity {
         setContentView(R.layout.login);
     
         TextView createNew = (TextView) findViewById(R.id.CreateNewTextView);
-    
-    
+        
         createNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             openNewActivity();
-            
             }
         });
-    
-    
-        
-    
-    
     }
     
     public void openNewActivity(){
